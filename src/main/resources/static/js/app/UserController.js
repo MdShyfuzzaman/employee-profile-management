@@ -111,6 +111,10 @@ angular.module('crudApp').controller('UserController',
             self.user = {};
             $scope.myForm.$setPristine(); //reset Form
         }
+
+        function logout() {
+            window.location.replace("http://localhost:8080/login");
+        }
     }
 
 

@@ -66,6 +66,8 @@
 							<button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm"
 									ng-disabled="myForm.$pristine">Reset Form
 							</button>
+							<button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm">Logout
+							</button>
 						</div>
 					</div>
 				</form>
