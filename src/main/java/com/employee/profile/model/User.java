@@ -23,6 +23,9 @@ public class User implements Serializable {
     @Column(name = "NOTE", nullable = false)
     private String note;
 
+    @Column(name = "GENDER", nullable = false)
+    private String gender;
+
     public Long getId() {
         return id;
     }
@@ -55,6 +58,14 @@ public class User implements Serializable {
         this.note = note;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -74,13 +85,14 @@ public class User implements Serializable {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (age != null ? age.hashCode() : 0);
         result = 31 * result + (note != null ? note.hashCode() : 0);
+        result = 31 * result + (gender != null ? gender.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "User [id=" + id + ", name=" + name + ", age=" + age
-                + ", note=" + note + "]";
+                + ", note=" + note + ", gender=" + gender + "]";
     }
 
 
