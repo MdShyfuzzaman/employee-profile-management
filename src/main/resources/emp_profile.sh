@@ -1,13 +1,11 @@
-employee-profile-management
-
+#!/bin/bash
+folder_name='emp-profile'
+mkdir -p $folder_name
+cd $folder_name
 git clone https://github.com/MdShyfuzzaman/employee-profile-management.git
-
 git clone https://github.com/MdShyfuzzaman/login.git
-
-#employee-profile
+cd employee-profile-management
 mvn spring-boot:run --Dspring.profiles.active=local
-
-#Login
+cd ..
+cd login
 mvn spring-boot:run
-
-* http://websystique.com/spring-boot/spring-boot-angularjs-spring-data-jpa-crud-app-example/
