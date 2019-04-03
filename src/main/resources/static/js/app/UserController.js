@@ -14,6 +14,8 @@ angular.module('crudApp').controller('UserController',
         self.removeUser = removeUser;
         self.editUser = editUser;
         self.reset = reset;
+        self.logout = logout;
+        self.consumedata = consumedata;
 
         self.successMessage = '';
         self.errorMessage = '';
@@ -114,6 +116,15 @@ angular.module('crudApp').controller('UserController',
 
         function logout() {
             window.location.replace("http://localhost:8080/login");
+        }
+
+        function consumedata() {
+            alert('test');
+            $http.get("https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=341248")
+                .success(function (response) {
+                    console.log(response);
+                    $scope.names = response;
+                });
         }
     }
 

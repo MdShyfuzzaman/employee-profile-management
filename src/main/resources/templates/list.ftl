@@ -31,20 +31,14 @@
 
 					<div class="row">
 						<div class="form-group col-md-12">
-							<label class="col-md-2 control-lable" for="note">Gender</label>
+
+							<label class="col-md-2 control-lable" for="gender">Gender</label>
 							<div class="col-md-7">
-								<label>
-									<input type="radio" name="ptf" class="form-control input-sm" ng-value="M"
-										   ng-model="ctrl.user.gender">Male
-								</label>
-								<label>
-									<input type="radio" name="ptf" class="form-control input-sm" ng-value="F"
-										   ng-model="ctrl.user.gender">Female
-								</label>
-								<label>
-									<input type="radio" name="ptf" class="form-control input-sm" ng-value="O"
-										   ng-model="ctrl.user.gender">Others
-								</label>
+								<select class="form-control custom-select" ng-model="ctrl.user.gender" id="gender">
+									<option value="M">Male</option>
+									<option value="F">Female</option>
+									<option value="O">Others</option>
+								</select>
 							</div>
 						</div>
 					</div>
@@ -61,12 +55,12 @@
 
 					<div class="row">
 						<div class="form-actions floatRight">
-							<input type="submit" value="{{!ctrl.user.id ? 'Add' : 'Update'}}"
+							<input type="submit" value="{{!ctrl.user.id ? 'Add New Employee' : 'Update'}}"
 								   class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid || myForm.$pristine">
 							<button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm"
 									ng-disabled="myForm.$pristine">Reset Form
 							</button>
-							<button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm">Logout
+							<button type="button" ng-click="ctrl.logout()" class="btn btn-warning btn-sm">Logout
 							</button>
 						</div>
 					</div>
@@ -110,8 +104,49 @@
 						</td>
 					</tr>
 					</tbody>
+					<tfoot>
+					<tr>
+						<td>Gender</td>
+						<td>Number of Employee</td>
+					</tr>
+					<tr>
+						<td>Male</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Female</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Others</td>
+						<td></td>
+					</tr>
+					</tfoot>
 				</table>
 			</div>
 		</div>
-    </div>
+	</div>
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading"><span class="lead">Consume 3rd Party Data </span></div>
+		<div class="panel-body">
+			<div class="table-responsive" ng-init="ctrl.consumedata()">
+				<table class="table table-hover">
+					<thead>
+					<tr>
+						<th>ID</th>
+						<th>NAME</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr ng-repeat="x in names">
+						<td>{{ x.name }}</td>
+						<td>{{ x.distance }}</td>
+					</tr>
+					</tbody>
+
+				</table>
+			</div>
+		</div>
+	</div>
 </div>

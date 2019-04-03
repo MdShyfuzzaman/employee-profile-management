@@ -78,6 +78,7 @@ public class RestApiController {
 
         currentUser.setName(user.getName());
         currentUser.setAge(user.getAge());
+        currentUser.setGender(user.getGender());
         currentUser.setNote(user.getNote());
 
         userService.updateUser(currentUser);
